@@ -1,0 +1,39 @@
+<p>ievn2 works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Lista de alumnos</h1>
+
+
+            <table class="table table-striped" *ngIf="alumnos.length">
+
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary">Mostrar Imagen</button>
+                        </th>
+                        <th>Matricula</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Correo</th>
+                        <th>Pago</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let alumno of alumnos">
+                        <td>{{alumno.matricula}}</td>
+                        <td>{{alumno.nombre}}</td>
+                        <td>{{alumno.edad}}</td>
+                        <td>{{alumno.correo}}</td>
+                        <td>{{alumno.pago | currency}}</td>
+                        <td><img style="height: 100px; width: 100px;" [src]="alumno.foto"> </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
