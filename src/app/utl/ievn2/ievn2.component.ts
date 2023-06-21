@@ -3,9 +3,19 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-ievn2',
   templateUrl: './ievn2.component.html',
-  styleUrls: ['./ievn2.component.css']
+  styleUrls: ['./ievn2.component.css'],
 })
 export class Ievn2Component {
+
+  imageWidth: number = 50;
+  imageMargin: number = 2;
+  muestraImagen: boolean = true;
+  findFilter: string = '';
+
+  showImage():void{
+    this.muestraImagen=!this.muestraImagen;
+  }
+
 
   //alumnos: any[] = []
   alumnos:any[]=[
