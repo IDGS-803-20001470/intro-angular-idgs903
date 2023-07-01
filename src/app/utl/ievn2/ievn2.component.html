@@ -7,7 +7,7 @@
           <div class="row">
             <div class="col-md-2">Filtrado por:</div>
             <div class="col-md-4">
-              <input type="text" name="" id="" class="form-control">
+              <input [(ngModel)]="listFilter"  name ="filter" class="form-control" type="text"/>
             </div>
           </div>
           <div class="row">
@@ -22,18 +22,18 @@
                   <th>
                     <button class="btn btn-primary" (click)="showImage()">Mostrar Imagen</button>
                   </th>
-                  <th>Foto</th>
                   <th>Matricula</th>
                   <th>Nombre</th>
                   <th>Edad</th>
                   <th>Correo</th>
                   <th>Pago</th>
+                  <th>Calificacion</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let alumno of alumnos">
-                  <!-- binding properties -->
-                  <td><input type="checkbox" name="" id=""></td>
+                <tr *ngFor="let alumno of alumnos |alumnosFilter:listFilter" >
+                  <!-- binding properties 
+                  <td><input type="checkbox" name="" id=""></td>-->
                   <td><img [src]="alumno.foto" alt="" [width]="imageWidth" [style.margin.px]="imageMargin"
                       [title]="alumno.nombre" *ngIf="muestraImagen"></td>
                   <td>{{ alumno.matricula }}</td>
@@ -41,6 +41,7 @@
                   <td>{{ alumno.edad }}</td>
                   <td>{{ alumno.correo }}</td>
                   <td>{{ alumno.pago|currency:'MXN' }}</td>
+                  <td>{{ alumno.calif }}</td>
                 </tr>
               </tbody>
             </table>
